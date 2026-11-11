@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #263238;
+}
+
+/* Navbar */
+.navbar {
+    background: #243b55;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-links a:hover {
+    color: #a9d6ff;
+}
+
+/* Container */
+.container {
+    width: 86%;
+    margin: 35px auto;
+    min-height: 65vh;
+}
+
+/* Hero */
+.hero {
+    background: #dceaf7;
+    padding: 65px 35px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
+    color: #243b55;
+}
+
+.hero p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #243b55;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #3c638a;
+}
+
+/* Judul */
+.section-title {
+    margin-bottom: 25px;
+    color: #243b55;
+}
+
+/* Book Grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+/* Book Card */
+.book-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.book-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.book-info {
+    padding: 15px;
+}
+
+.book-info h3 {
+    margin-bottom: 8px;
+}
+
+.book-info p {
+    color: #687782;
+    margin-bottom: 10px;
+}
+
+.book-info span {
+    display: inline-block;
+    background: #e4eef8;
+    color: #243b55;
+    padding: 5px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.book-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.detail-btn {
+    text-decoration: none;
+    color: #243b55;
+    font-weight: bold;
+}
+
+.favorite {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+}
+
+.favorite.active {
+    color: #e63946;
+}
+
+/* Search */
+.search-input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 25px;
+    border: 1px solid #ccd4dc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+/* Detail */
+.detail-container {
+    display: flex;
+    gap: 35px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.detail-container img {
+    width: 250px;
+    height: 330px;
+    object-fit: cover;
+}
+
+.detail-container p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: #243b55;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-container {
+        flex-direction: column;
+    }
+
+    .detail-container img {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+}
+
+.detail-info {
+    flex: 1;
+}
+
+.detail-info h1 {
+    color: #243b55;
+    margin-bottom: 20px;
+}
+
+.detail-info h3 {
+    color: #243b55;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.detail-info p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.detail-info .btn-primary {
+    margin-top: 20px;
+}
+
+
+/* Deskripsi Katalog */
+.katalog-description {
+    color: #64748b;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Pencarian Buku */
+.search-input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.search-input:focus {
+    border-color: #243b55;
+}
+
+/* Filter dan Pengurutan */
+.filter-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: #243b55;
+}
+
+.filter-group select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Jumlah Buku */
+.jumlah-buku {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+/* Pembungkus Kartu Buku */
+.book-wrapper {
+    position: relative;
+}
+
+/* Label Terbaru */
+.badge-terbaru {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    background-color: #e0f2fe;
+    color: #075985;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Buku Tidak Ditemukan */
+.buku-kosong {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.buku-kosong h2 {
+    color: #243b55;
+    margin-bottom: 12px;
+}
+
+.buku-kosong p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.buku-kosong button {
+    padding: 11px 20px;
+    background-color: #243b55;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.buku-kosong button:hover {
+    background-color: #365675;
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    .filter-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+}
