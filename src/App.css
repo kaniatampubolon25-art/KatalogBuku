@@ -32,3 +32,22 @@
     color: #aab9a8;
     font-size: 11px;
 }
+
+
+.admin-preview {
+  margin: 12px 0 18px;
+}
+
+.admin-preview p {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.admin-preview img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #dbeafe;
+}

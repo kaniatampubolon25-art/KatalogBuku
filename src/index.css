@@ -1189,3 +1189,204 @@ a {
         padding: 15px;
     }
 }
+
+
+/* ADMIN KELOLA BUKU */
+.admin-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 24px;
+  color: #1e293b;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.admin-header h1 {
+  font-size: 30px;
+  color: #173b70;
+  margin-bottom: 6px;
+}
+
+.admin-header p {
+  color: #64748b;
+}
+
+.admin-add-btn,
+.admin-form-actions button:last-child {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 25px;
+  color: #2563eb;
+}
+
+.admin-stats h2 {
+  font-size: 25px;
+}
+
+.admin-stats p {
+  color: #64748b;
+}
+
+.admin-form-box,
+.admin-table-box {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 25px;
+}
+
+.admin-form-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.admin-form-header button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.admin-form-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-form-box label {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.admin-form-box input,
+.admin-form-box textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.admin-form-box textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.admin-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.admin-form-actions button {
+  padding: 11px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.admin-form-actions button:first-child {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.admin-book-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-book-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.admin-book-info img,
+.admin-no-image {
+  width: 55px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #eff6ff;
+}
+
+.admin-no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+}
+
+.admin-book-info p,
+.admin-book-info small {
+  color: #64748b;
+  margin-top: 5px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-actions button {
+  padding: 9px;
+  border: none;
+  border-radius: 7px;
+  background: #eff6ff;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.admin-actions button:last-child {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.admin-empty {
+  color: #64748b;
+  padding: 20px 0;
+}
+
+@media (max-width: 600px) {
+  .admin-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-container {
+    padding: 15px;
+  }
+
+  .admin-book-row {
+    align-items: flex-start;
+  }
+}

@@ -1,7 +1,13 @@
 
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { BookOpen, Home, Heart, Library } from "lucide-react";
+import {
+    BookOpen,
+    Home,
+    Heart,
+    Library,
+    Settings
+} from "lucide-react";
 
 export default function Navbar({ favoriteCount = 0 }) {
     return (
@@ -31,11 +37,17 @@ export default function Navbar({ favoriteCount = 0 }) {
                 <NavLink to="/favorit">
                     <Heart size={17} />
                     Favorit
+
                     {favoriteCount > 0 && (
                         <span className="nav-count">
                             {favoriteCount}
                         </span>
                     )}
+                </NavLink>
+
+                <NavLink to="/admin">
+                    <Settings size={17} />
+                    Admin
                 </NavLink>
             </div>
         </nav>

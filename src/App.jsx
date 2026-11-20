@@ -11,6 +11,7 @@ import Beranda from "./assets/pages/Beranda";
 import Katalog from "./assets/pages/Katalog";
 import DetailBuku from "./assets/pages/DetailBuku";
 import Favorit from "./assets/pages/Favorit";
+import AdminBuku from "./assets/components/AdminBuku";
 
 function loadStorage(key, fallback = []) {
     try {
@@ -29,6 +30,77 @@ export default function App() {
         () => loadStorage("pustaka-recent")
     );
 
+    const [bukuTambahan, setBukuTambahan] = useState(
+        () => loadStorage("pustaka-buku-tambahan")
+    );
+
+    // Menambahkan buku baru
+    function simpanBukuTambahan(data) {
+        setBukuTambahan((old) => {
+            const next = [...old, data];
+
+            localStorage.setItem(
+                "pustaka-buku-tambahan",
+                JSON.stringify(next)
+            );
+
+            return next;
+        });
+    }
+
+    // Mengedit buku
+    function editBukuTambahan(data) {
+        setBukuTambahan((old) => {
+            const next = old.map((item) =>
+                item.id === data.id ? data : item
+            );
+
+            localStorage.setItem(
+                "pustaka-buku-tambahan",
+                JSON.stringify(next)
+            );
+
+            return next;
+        });
+    }
+
+    // Menghapus buku
+    function hapusBukuTambahan(id) {
+        setBukuTambahan((old) => {
+            const next = old.filter((item) => item.id !== id);
+
+            localStorage.setItem(
+                "pustaka-buku-tambahan",
+                JSON.stringify(next)
+            );
+
+            return next;
+        });
+
+        setFavorit((old) => {
+            const next = old.filter((item) => item !== id);
+
+            localStorage.setItem(
+                "pustaka-favorit",
+                JSON.stringify(next)
+            );
+
+            return next;
+        });
+
+        setRecent((old) => {
+            const next = old.filter((item) => item !== id);
+
+            localStorage.setItem(
+                "pustaka-recent",
+                JSON.stringify(next)
+            );
+
+            return next;
+        });
+    }
+
+    // Menambah atau menghapus favorit
     function toggleFavorit(id) {
         setFavorit((old) => {
             const next = old.includes(id)
@@ -44,6 +116,7 @@ export default function App() {
         });
     }
 
+    // Menyimpan riwayat buku yang dilihat
     function addRecent(id) {
         setRecent((old) => {
             const next = [
@@ -72,6 +145,7 @@ export default function App() {
                             favorit={favorit}
                             onToggle={toggleFavorit}
                             recent={recent}
+                            bukuTambahan={bukuTambahan}
                         />
                     }
                 />
@@ -82,6 +156,7 @@ export default function App() {
                         <Katalog
                             favorit={favorit}
                             onToggle={toggleFavorit}
+                            bukuTambahan={bukuTambahan}
                         />
                     }
                 />
@@ -93,6 +168,7 @@ export default function App() {
                             favorit={favorit}
                             onToggle={toggleFavorit}
                             onView={addRecent}
+                            bukuTambahan={bukuTambahan}
                         />
                     }
                 />
@@ -103,6 +179,19 @@ export default function App() {
                         <Favorit
                             favorit={favorit}
                             onToggle={toggleFavorit}
+                            bukuTambahan={bukuTambahan}
+                        />
+                    }
+                />
+
+                <Route
+                    path="/admin"
+                    element={
+                        <AdminBuku
+                            buku={bukuTambahan}
+                            onTambah={simpanBukuTambahan}
+                            onEdit={editBukuTambahan}
+                            onHapus={hapusBukuTambahan}
                         />
                     }
                 />
